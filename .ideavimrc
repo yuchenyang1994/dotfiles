@@ -1,0 +1,14 @@
+set hlsearch
+
+let mapleader = ','
+let g:mapleader = ','
+
+map <Leader>sa ggVG
+nnoremap U <C-r>
+
+vnoremap < <gv
+vnoremap > >gv
+
+map Y y$
+
+nnoremap ; :
