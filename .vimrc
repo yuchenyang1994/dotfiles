@@ -613,6 +613,15 @@ endif
 "==========================================
 " TEMP 设置, 尚未确定要不要
 "==========================================
+" python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " tmux
 " function! WrapForTmux(s)
@@ -665,8 +674,8 @@ endif
 set background=dark
 set t_Co=256
 
-" colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+" colorscheme molokai
 " colorscheme desert
 
 
